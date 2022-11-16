@@ -1,8 +1,6 @@
 package zio.http.api
 
 import zio.http._
-import zio.http.model.MediaType
-import zio.http.model.headers.values.AccessControlMaxAge
 import zio.test._
 
 object AccessControlAllowMaxAgeSpec extends ZIOSpecDefault {
