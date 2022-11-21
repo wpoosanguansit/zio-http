@@ -316,6 +316,14 @@ object Middleware {
     )(identity)
   }
 
+  def withOrigin(value: CharSequence): Middleware[Any, Unit, Unit] = {
+    fromFunction(
+      MiddlewareSpec.withOrigin.mapOut(
+        _.unit(Origin.toOrigin(value.toString)),
+      ),
+    )(identity)
+  }
+
   val none: Middleware[Any, Unit, Unit] =
     fromFunction(MiddlewareSpec.none)(_ => ())
 
